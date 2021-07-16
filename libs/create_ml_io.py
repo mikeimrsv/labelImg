@@ -48,8 +48,8 @@ class CreateMLWriter:
             shape_dict = {
                 "label": shape["label"],
                 "coordinates": {
-                    "x": x,
-                    "y": y,
+                    "x": x - (width / 2), # should give you x if the origin is lower left
+                    "y": self.img_size[0] - (y + (height / 2)), # should give you y if the origin is lower left
                     "width": width,
                     "height": height
                 }
